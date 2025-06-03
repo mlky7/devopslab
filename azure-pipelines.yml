@@ -16,12 +16,12 @@ steps:
 - script: java -version
   displayName: 'Check Java Version'
 
-# ✅ Maven build
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'clean install'
     options: '-X'
-    javaHomeOption: 'Path'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.17'
     mavenVersionOption: 'Default'
     publishJUnitResults: true
